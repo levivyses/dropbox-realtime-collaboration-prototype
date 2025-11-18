@@ -1,0 +1,1 @@
+const dotenv = require('dotenv');dotenv.config();const required=['DROPBOX_TOKEN'];for(const key of required){if(!process.env[key])throw new Error(\Missing environment variable: \\)};module.exports={dropboxToken:process.env.DROPBOX_TOKEN,port:process.env.PORT||3000}

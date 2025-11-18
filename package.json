@@ -1,8 +1,7 @@
 {
-  "name": "dropbox-realtime-editor",
-  "version": "1.0.0",
-  "main": "src/server.js",
-  "scripts": {
-    "start": "node src/server.js"
-  }
+  "name":"dropbox-realtime-collaboration-prototype",
+  "version":"1.0.0",
+  "main":"src/index.js",
+  "scripts":{"start":"node src/index.js"},
+  "dependencies":{"express":"^4.18.2","ws":"^8.13.0","dropbox":"^11.36.0","node-fetch":"^2.6.7","dotenv":"^16.1.4"}
 }

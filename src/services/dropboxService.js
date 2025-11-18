@@ -1,0 +1,1 @@
+const dbx=require('../config/dropbox');const {log}=require('../core/logger');module.exports={async readFile(path){const r=await dbx.filesDownload({path});return r.result.fileBinary.toString()},async writeFile(path,content){await dbx.filesUpload({path,contents:content,mode:{'.tag':'overwrite'}});log('Saved to Dropbox',path)}}

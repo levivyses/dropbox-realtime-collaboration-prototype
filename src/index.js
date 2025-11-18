@@ -1,0 +1,1 @@
+const createHttpServer=require('./http/server');const createWsServer=require('./ws/wsServer');const {port}=require('./config/env');const {log}=require('./core/logger');;(async()=>{const app=createHttpServer();const server=app.listen(port,()=>log(\Server running on \\));await createWsServer(server)})()

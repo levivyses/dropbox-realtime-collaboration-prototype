@@ -1,2 +1,2 @@
-# Dropbox Realtime Editor
-Prototype for real-time Dropbox file collaboration.
+# Dropbox Realtime Collaboration Prototype
+Realtime editor using Node.js, WebSockets, and Dropbox API

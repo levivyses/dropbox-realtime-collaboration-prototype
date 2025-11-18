@@ -1,0 +1,1 @@
+const WebSocket=require('ws');const handleEvents=require('./events');const sync=require('../services/syncService');module.exports=async function createWsServer(server){const wss=new WebSocket.Server({server});const initialContent=await sync.loadInitial();wss.on('connection',ws=>{ws.send(initialContent);handleEvents(ws,wss)});return wss}

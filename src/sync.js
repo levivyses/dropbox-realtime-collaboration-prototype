@@ -1,1 +1,1 @@
-console.log("Sync module loaded");
+const { Dropbox } = require("dropbox"); require("dotenv").config(); function syncDropbox(){ const dbx = new Dropbox({ accessToken: process.env.DROPBOX_TOKEN }); console.log("Dropbox client initialized"); } module.exports={syncDropbox};

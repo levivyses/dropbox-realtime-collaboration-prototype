@@ -1,0 +1,1 @@
+const debounce=require('../core/debounce');const cache=require('./fileCache');const dropbox=require('./dropboxService');const FILE_PATH='/editor/document.txt';module.exports={async loadInitial(){const c=await dropbox.readFile(FILE_PATH);cache.update(FILE_PATH,c);return c},saveDebounced:debounce(async content=>{await dropbox.writeFile(FILE_PATH,content)},500)}

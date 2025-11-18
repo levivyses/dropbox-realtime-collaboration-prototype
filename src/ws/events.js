@@ -1,0 +1,1 @@
+const cache=require('../services/fileCache');const sync=require('../services/syncService');module.exports=function handleEvents(ws,wss){ws.on('message',msg=>{const t=msg.toString();cache.update('/editor/document.txt',t);sync.saveDebounced(t);wss.clients.forEach(c=>{if(c!==ws&&c.readyState===1)c.send(t)})})}

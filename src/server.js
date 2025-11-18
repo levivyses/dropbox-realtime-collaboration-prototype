@@ -1,1 +1,1 @@
-console.log("Server started");
+const express = require("express"); const WebSocket = require("ws"); const { syncDropbox } = require("./sync"); const app = express(); const server = app.listen(3000, () => console.log("Server running on 3000")); const wss = new WebSocket.Server({ server }); wss.on("connection", ws => { ws.on("message", msg => { wss.clients.forEach(c => { if(c.readyState===WebSocket.OPEN)c.send(msg); }); }); }); syncDropbox();

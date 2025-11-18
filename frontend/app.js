@@ -1,0 +1,1 @@
+const ws=new WebSocket(\ws://\\);const editor=document.getElementById('editor');let local=false;ws.onmessage=e=>{if(!local)editor.value=e.data;local=false};editor.addEventListener('input',()=>{local=true;ws.send(editor.value)})
